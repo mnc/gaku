@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170830235311) do
+ActiveRecord::Schema.define(version: 20170831000849) do
+
+  create_table "couples", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+    t.integer "partner_1", null: false
+    t.integer "partner_2", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["partner_1"], name: "index_couples_on_partner_1", unique: true
+    t.index ["partner_2"], name: "index_couples_on_partner_2", unique: true
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string "email", limit: 70
