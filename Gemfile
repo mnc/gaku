@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'annotate', require: false
+gem 'bcrypt'
 gem 'config'
 gem 'rails', '~> 5.1.3'
 gem 'mysql2'
